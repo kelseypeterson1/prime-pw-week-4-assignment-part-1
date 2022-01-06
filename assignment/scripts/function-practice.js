@@ -60,9 +60,16 @@ console.log('Test - should return last of array [bird, banana, butterscotch]:', 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
+let index = 0;
 function find( value, array ){
-
+  while (index < array.length){
+    if (value === array[index]) {
+      return true;
+    }
+    index ++;
+  }
 }
+console.log('Test - should return true if banana is found in array [bird, banana, butterscotch]', find('banana', ['bird', 'banana', 'butterscotch']));
 
 // ----------------------
 // Stretch Goals
