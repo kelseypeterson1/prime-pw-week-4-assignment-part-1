@@ -52,7 +52,7 @@ console.log('isPositive - should say false', isPositive(-3));
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
-function getLast( array ) {
+function getLast(array) {
   return array[array.length - 1];
 }
 console.log('Test - should return last of array [bird, banana, butterscotch]:', getLast(['bird', 'banana', 'butterscotch']));
@@ -77,24 +77,56 @@ console.log('Test - should return true if banana is found in array [bird, banana
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  result = string.startsWith(letter);
+  return result;
 }
-console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
-console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
+console.log('isFirstLetter - should say true', isFirstLetter('a', 'apple') );
+console.log('isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
-  let sum = 0
+function sumAll(array) {
+  let sum = 0;
+  let i = 0;
   // TODO: loop to add items
+  while (i<array.length) {
+    sum = sum + array[i];
+    i++;
+  }
   return sum;
 }
+
+console.log('Test - should sum the numbers in the array [3, 5, 10]', sumAll([3, 5, 10]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+let i = 0;
+testArray = [100, 200, 300, 400, 500, 600]
+testArray.splice(i, 1);
+console.log(testArray);
 
+function positiveNumbers (array) {
+  let i = 0;
+  while (i < array.length) {
+    if (array[i] > 0) {
+    } else {
+      array.splice(i, 1);
+      i--;
+    }
+  i++;
+  }
+  return array;
+}
 
-
+console.log('Test - should only keep numbers greater than 0 in array [9, -5, 4, 0, -20]', positiveNumbers([9, -5, 4, 0, -20]));
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+
+// Finding the area of a triangle (Edabit)
+function triArea(base, height) {
+	area = base * height / 2;
+  return area;
+}
+
+console.log('Test - Finding the area of a triangle with a base of 7 and height of 4 (should be 14):', triArea(7, 4));
